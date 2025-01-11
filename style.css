@@ -1,0 +1,871 @@
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-wrap:break-word;
+    overflow-y:hidden;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #111;
+    align-items: center;
+    justify-content: center;
+}
+
+.horizontal-content-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-direction-vertical {
+    flex-direction: column;
+}
+
+.content-body {
+    align-items: center;
+    background-color: #111;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    overflow: scroll;
+}
+
+.separator {
+    width: 4px; 
+    background-color: #1f1f1f; 
+    margin: 0 20px; 
+    height: 100%; 
+}
+
+.horizontal-container {
+    display: flex;
+    width: 100%; /* Full width of the parent container */
+}
+
+.left-side {
+    flex: 0 0 calc(40% - 20px); /* 40% width minus half the separator width */
+    max-width: calc(40% - 20px); /* Ensure it doesn't exceed this width */
+    border: none; /* Remove any borders */
+    background: transparent; /* Ensure no background color is applied */
+}
+
+
+.right-side {
+    flex: 0 0 calc(60% - 20px); /* 60% width minus half the separator width */
+    max-width: calc(60% - 20px); /* Ensure it doesn't exceed this width */
+    border: none; /* Remove any borders */
+    background: transparent; /* Ensure no background color is applied */
+}
+
+.task-form {
+    background-color: white;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.task-form input[type="text"],
+.task-form input[type="password"],
+.task-form input[type="url"] {
+    width: 100%;
+    padding: 12px; /* Increase padding for comfort */
+    margin: 10px 0; /* Space between input fields */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #222; /* Dark background for input */
+    color: white; /* Text color */
+    font-size: 16px; /* Font size */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+.task-form input[type="password"]:focus {
+    border-color: #3498db; /* Highlight border color on focus */
+    outline: none; /* Remove default outline */
+    background-color: #333; /* Slightly lighter background on focus */
+}
+
+.task-form input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100px;
+}
+
+.task-form input[type="submit"]:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+.task-form input[type="submit"]:active {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.task-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.task-form h3 {
+    margin-bottom: 20px;
+    color: #fff
+}
+
+.container {
+    gap: 10px;  
+    display: grid;
+    margin-bottom: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    width: min(100%, 1400px);
+}
+
+.single-container {
+    gap: 10px;
+    display: grid;
+    margin-bottom: 10px;
+    grid-template-columns: repeat(1, 1fr);
+    width: min(90%, 600px)
+}
+
+.box-full {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin-left: 3px;
+    margin-right: 3px;
+    background-color: #333;
+    transition: background-color 0.3s;
+}
+
+.box-full:hover {
+    background-color: #555;
+}
+
+
+.box-full:hover h1 {
+    transform: scale(1.1);
+}
+
+.box-full:active h1 {
+    transform: scale(1.05);
+}
+
+
+.box-full::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: opacity 500ms;
+    background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y), 
+        rgba(255, 255, 255, 0.6),
+        transparent 20%
+    );
+    z-index: 1;
+}
+
+
+
+.box-full:hover::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: opacity 500ms;
+    background: radial-gradient(
+        500px circle at var(--mouse-x) var(--mouse-y), 
+        rgba(255, 255, 255, 0.08),
+        transparent 30%
+    );
+    z-index: 3;
+}
+
+.box {
+    position: relative;
+    width: 300px;
+    height: 100px;
+    margin-left: 3px;
+    margin-right: 3px;
+    background-color: #333;
+    transition: background-color 0.3s;
+    text-wrap: wrap;
+}
+
+/* .single-container .box {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    margin-left: 3px;
+    margin-right: 3px;
+    background-color: #333;
+    transition: background-color 0.3s;
+    text-wrap: wrap;
+} */
+
+.single-container .box p {
+    text-wrap: wrap;
+}
+
+.box:hover {
+    background-color: #555;
+}
+
+.container .box:hover h1 {
+    transform: scale(1.1);
+}
+
+.container .box:active h1 {
+    transform: scale(1.05);
+}
+
+
+.box::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: opacity 500ms;
+    background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y), 
+        rgba(255, 255, 255, 0.6),
+        transparent 20%
+    );
+    z-index: 1;
+}
+
+
+
+.box:hover::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: opacity 500ms;
+    background: radial-gradient(
+        500px circle at var(--mouse-x) var(--mouse-y), 
+        rgba(255, 255, 255, 0.08),
+        transparent 30%
+    );
+    z-index: 3;
+}
+
+.box-content {
+    background-color: #111;
+    inset: 1px;
+    position: absolute;
+    z-index: 2;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-wrap: wrap;
+}
+
+.box-content h1 {
+    margin-top: 10px;
+    text-align: center;     /* Center the text */
+    color: white;           /* Text color */
+    font-size: 20px;         /* Font size for the title */
+    margin: 0;              /* Remove default margin */
+    font-family: sans-serif; /* Font family */
+    transition: transform 0.3s;
+    text-wrap: wrap;
+}
+
+.single-container .box-content h1 {
+    margin-top: 10px;
+    text-align: center;     /* Center the text */
+    color: white;           /* Text color */
+    font-size: 20px;         /* Font size for the title */
+    margin: 0;              /* Remove default margin */
+    font-family: sans-serif; /* Font family */
+    transition: transform 0.3s;
+    text-wrap: wrap;
+}
+
+.box-content h2 {
+    text-align: left;
+    color: white;
+    font-size: 20px;  
+    margin: 0;
+    margin-left: 10px;
+    font-family: sans-serif;
+    text-wrap: wrap;
+}
+
+.single-container .box-content h2 {
+    text-wrap: wrap;
+    text-align: left;
+    color: white;
+    font-size: 20px;  
+    margin: 0;
+    margin-top: 0px;
+    font-family: sans-serif;
+}
+
+.box-content h3 {
+    text-wrap: wrap;
+    text-align: left;
+    color: white;
+    font-size: 16px;  
+    margin: 0;
+    margin-top: 5px;
+    font-family: sans-serif;
+}
+
+.single-container .box-content h3 {
+    text-wrap: wrap;
+    text-align: left;
+    color: white;
+    font-size: 16px;  
+    margin: 0;
+    margin-top: 5px;
+    font-family: sans-serif;
+}
+
+.box-content p, a {
+    text-align: left;
+    color: white;
+    font-size: 14px;  
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    font-family: sans-serif;
+    text-wrap: wrap;
+    z-index: 5;
+}
+
+
+.box-content .caption {
+    margin-top: 5px
+}
+
+.box-button {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    z-index: 4;
+}
+
+.box-button:hover {
+    opacity: 1
+}
+
+
+.white-text-paragraph {
+    color: #fff;
+}
+
+/* Container style */
+.header-container {
+    width: inherit;            /* Full width */
+    background-color: #3498db; /* Background color */
+    padding: 20px;         /* Padding around the header */
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Header style */
+.header-title {
+    text-align: center;     /* Center the text */
+    color: white;           /* Text color */
+    font-size: 2em;         /* Font size for the title */
+    margin: 0;              /* Remove default margin */
+    font-family: 'Arial', sans-serif; /* Font family */
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        opacity: 0; /* Optional: start invisible */
+    }
+    100% {
+        transform: translateX(0); /* End at the original position */
+        opacity: 1; /* Fade in to visible */
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the left */
+        opacity: 0; /* Optional: start invisible */
+    }
+    100% {
+        transform: translateX(0); /* End at the original position */
+        opacity: 1; /* Fade in to visible */
+    }
+}
+
+@keyframes slideOutToRight {
+    0% {
+        transform: translateX(0); /* Start off-screen to the left */
+        opacity: 1; /* Optional: start invisible */
+    }
+    100% {
+        transform: translateX(100%); /* End at the original position */
+        opacity: 0; /* Fade in to visible */
+    }
+}
+
+@keyframes slideOutToLeft {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the left */
+        opacity: 1; /* Optional: start invisible */
+    }
+    100% {
+        transform: translateX(-100%); /* End at the original position */
+        opacity: 0; /* Fade in to visible */
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f1f1f; /* Darker background for the navbar */
+    padding: 10px 20px;
+}
+.navbar .nav-left,
+.navbar .nav-right {
+    display: flex;
+    align-items: center;
+}
+.nav-left a,
+.nav-right a {
+    color: #ffffff; /* White text for links */
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+.nav-left a:hover,
+.nav-right a:hover {
+    background-color: #333333; /* Slightly lighter background on hover */
+}
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-left,
+    .nav-right {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+.inline-image {
+    width: inherit;
+    height: inherit;
+}
+
+.navbar-link-from-left {
+    animation: slideInFromLeft 0.3s ease forwards; /* for navbar enter */
+}
+
+.navbar-link-from-right {
+    animation: slideInFromLeft 0.2s ease forwards; /* Unused */
+}
+
+.slide-out-to-right {
+    animation: slideOutToLeft 0.3s ease forwards; /*for navbar items exitting */
+}
+
+
+
+/* support for thin screens */
+/* Base styles for larger screens */
+.vertical-container {
+    display: flex;
+    flex-direction: row; /* Default to row layout on larger screens */
+}
+
+.form-container {
+    width: 40%; /* Left side for form on larger screens */
+}
+
+.task-list {
+    width: 60%; /* Right side for task list on larger screens */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .horizontal-container {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .left-side,
+    .right-side {
+        width: 100%; /* Full width for both sides */
+    }
+
+    .separator {
+        display: none; /* Hide the separator on mobile */
+    }
+}
+
+/* input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    cursor: pointer;
+} */
+
+
+
+/* calendar stuff */
+
+.calendar-container {
+    display: none;
+    position: absolute;
+    background-color: #222222;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    width: 350px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 10px;
+}
+
+.day {
+    font-weight: bold;
+    text-align: center;
+}
+
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 5px;
+}
+
+.date {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.date:hover {
+    background-color: #555;
+}
+
+.today {
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.calendar {
+    width: 100%;
+    padding: 0px; /* Increase padding for comfort */
+    margin: 0px 0; /* Space between input fields */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: transparent; /* Dark background for input */
+    color: white; /* Text color */
+    font-size: 16px; /* Font size */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.default-cursor {
+    cursor: default;
+}
+
+.box-subcontent-left {
+    width: 400px;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.box-subcontent-right {
+    width: 250px;
+    flex-direction: column;
+    margin-left: 10px;
+    align-items: center;
+    justify-items: center;
+}
+
+.button-large {
+    opacity: 1;
+    height: 40px;          /* Set height */
+    width: 180px;           /* Set width */
+    background-color: #2a86c3; /* Bootstrap danger color */
+    color: white;           /* Text color */
+    border: none;           /* Remove border */
+    border-radius: 5px;    /* Rounded corners */
+    font-size: 18px;        /* Font size */
+    cursor: pointer;        /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.button-large:hover {
+    background-color: #1571af; /* Darker shade on hover */
+}
+
+.remove-button-large {
+    opacity: 1;
+    height: 40px;          /* Set height */
+    width: 180px;           /* Set width */
+    background-color: #853533; /* Bootstrap danger color */
+    color: white;           /* Text color */
+    border: none;           /* Remove border */
+    border-radius: 5px;    /* Rounded corners */
+    font-size: 18px;        /* Font size */
+    cursor: pointer;        /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    margin-left: 20px;
+}
+
+.box-clickable {
+    z-index: 10;
+}
+
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+.circle-border-box {
+    border: 2px solid #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.circle-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: circle 2s linear infinite;
+    border-color: rgba(0, 123, 255, 0.5);
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+body.dark-mode {
+    background-color: #121212; /* Dark mode background */
+    color: #e0e0e0; /* Dark mode text color */
+}
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+body.dark-mode th {
+    background-color: #1e1e1e; /* Dark mode header */
+}
+
+tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+body.dark-mode tr:nth-child(even) {
+    background-color: #292929; /* Dark mode even rows */
+}
+
+.period-form {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f5f5f5; /* Light mode form background */
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .period-form {
+    background-color: #1f1f1f; /* Dark mode form background */
+}
+
+.period-form input,
+.week-selector select {
+    margin: 5px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 26px); /* Full width minus padding */
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+body.dark-mode .period-form input,
+body.dark-mode .week-selector select {
+    border: 1px solid #444; /* Dark mode input border */
+    background: #333; /* Dark mode input background */
+    color: #e0e0e0; /* Dark mode input text */
+}
+
+.toggle-button {
+    margin: 20px 0;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Light mode button */
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.toggle-button:hover {
+    background-color: #0056b3; /* Light mode button hover */
+}
+
+body.dark-mode .toggle-button {
+    background-color: #6200ea; /* Dark mode button */
+}
+
+body.dark-mode .toggle-button:hover {
+    background-color: #3700b3; /* Dark mode button hover */
+}
+
+.week-selector {
+    margin: 20px 0;
+}
+
+.current-info {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f5f5f5; /* Light mode current info */
+}
+
+body.dark-mode .current-info {
+    border-color: #444; /* Dark mode border */
+    background-color: #1f1f1f; /* Dark mode current info background */
+}
+
+/* styles.css */
+.schedule-table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.schedule-table th {
+    background-color: #f5f5f5;
+    color: #000000;
+}
+
+.schedule-table td {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.schedule-table .period-info {
+    color: #000000;
+}
+
+.schedule-table .no-class {
+    color: #666;
+}
+
+.schedule-table .current-period {
+    background-color: #ffeb3b;
+}
+
+.schedule-table .current-day {
+    background-color: #111;
+}
+
+
+/* Dark mode styles */
+.dark-mode .schedule-table {
+    background-color: #333;
+    border-color: #555;
+}
+
+.dark-mode .schedule-table th,
+.dark-mode .schedule-table td {
+    border-color: #555;
+    color: #ffffff;
+}
+
+.dark-mode .schedule-table th {
+    background-color: #444;
+}
+
+.dark-mode .schedule-table td {
+    background-color: #333;
+}
+
+.dark-mode .schedule-table .period-info {
+    color: #ffffff;
+}
+
+.dark-mode .schedule-table .no-class {
+    color: #999;
+}
+
+.dark-mode .schedule-table .current-period {
+    background-color: #4a4a00;
+}
+
+.dark-mode .schedule-table .current-day {
+    background-color: #555;
+}
