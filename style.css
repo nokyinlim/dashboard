@@ -690,10 +690,6 @@ body {
 }
 
 
-body.dark-mode {
-    background-color: #121212; /* Dark mode background */
-    color: #e0e0e0; /* Dark mode text color */
-}
 
 table {
     width: 100%;
@@ -748,7 +744,7 @@ body.dark-mode .period-form {
 
 body.dark-mode .period-form input,
 body.dark-mode .week-selector select {
-    border: 1px solid #444; /* Dark mode input border */
+    border: 1px solid hsl(0, 0%, 27%); /* Dark mode input border */
     background: #333; /* Dark mode input background */
     color: #e0e0e0; /* Dark mode input text */
 }
@@ -783,7 +779,7 @@ body.dark-mode .toggle-button:hover {
 .current-info {
     margin: 20px 0;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #bbb;
     border-radius: 5px;
     background-color: #f5f5f5; /* Light mode current info */
 }
@@ -797,8 +793,8 @@ body.dark-mode .current-info {
 .schedule-table {
     border-collapse: collapse;
     width: 100%;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
+    background-color: #ddd;
+    border: 1px solid #bbb;
 }
 
 .schedule-table th,
@@ -813,12 +809,12 @@ body.dark-mode .current-info {
 }
 
 .schedule-table td {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #ddd;
+    color: #111;
 }
 
 .schedule-table .period-info {
-    color: #000000;
+    color: #333;
 }
 
 .schedule-table .no-class {
@@ -826,13 +822,22 @@ body.dark-mode .current-info {
 }
 
 .schedule-table .current-period {
-    background-color: #ffeb3b;
+    background-color: #b4ff3b;
 }
 
 .schedule-table .current-day {
-    background-color: #111;
+    background-color: #d6ecf3;
+
 }
 
+.schedule-table .next-period {
+    background-color: #ffeb3b;
+
+}
+
+.schedule-table .current-day:hover, .current-period:hover, .next-period:hover {
+    scale: 1;
+}
 
 /* Dark mode styles */
 .dark-mode .schedule-table {
@@ -843,7 +848,7 @@ body.dark-mode .current-info {
 .dark-mode .schedule-table th,
 .dark-mode .schedule-table td {
     border-color: #555;
-    color: #ffffff;
+    color: #ddd;
 }
 
 .dark-mode .schedule-table th {
@@ -855,7 +860,7 @@ body.dark-mode .current-info {
 }
 
 .dark-mode .schedule-table .period-info {
-    color: #ffffff;
+    color: #ddd;
 }
 
 .dark-mode .schedule-table .no-class {
@@ -863,9 +868,13 @@ body.dark-mode .current-info {
 }
 
 .dark-mode .schedule-table .current-period {
-    background-color: #4a4a00;
+    background-color: #0c4d05;
 }
 
 .dark-mode .schedule-table .current-day {
-    background-color: #555;
+    background-color: #00001c;
+}
+
+.dark-mode .schedule-table .next-period {
+    background-color: #4a4a00;
 }

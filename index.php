@@ -6,15 +6,16 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
     exit;
 }
 
-// include 'calendar/calendar.php';
-// include 'calendar/database.php';
-// include 'calendar/config.php';
+include 'calendar/config.php';
+include 'calendar/database.php';
+include 'calendar/calendar.php';
+include 'src/utils.php';
 
-// $calendar = new Calendar();
+$calendar = new Calendar();
 
-// $current_period = $calendar->getCurrentPeriod(8);
-// $next_period = $calendar->getNextPeriod(8);
-// $today_schedule = $calendar->getDaySchedule();
+$current_period = $calendar->getCurrentPeriod(8);
+$next_period = $calendar->getNextPeriod(8);
+$today_schedule = $calendar->getDaySchedule();
 
 ?>
 <!DOCTYPE html>
@@ -109,7 +110,10 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
     </div>
     <div class="content-body">
 
-    <p style="color: white;">Homepage</p>
+    <?php
+    // Display table
+    echo $calendar->generateTodayView($_GET['week'] ?? null);
+    ?>
     <!-- <div class="current-info"> -->
         <?php
         // $current_period = $calendar->getCurrentPeriod(8);
