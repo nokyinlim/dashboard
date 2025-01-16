@@ -114,29 +114,11 @@ $today_schedule = $calendar->getDaySchedule();
     // Display table
     echo $calendar->generateTodayView($_GET['week'] ?? null);
     ?>
-    <!-- <div class="current-info"> -->
-        <?php
-        // $current_period = $calendar->getCurrentPeriod(8);
-        // if ($current_period) {
-        //     echo "<h3>Current Period: P{$current_period['period']}</h3>";
-        //     if ($current_period['info']) {
-        //         echo "<p>Title: {$current_period['info']['title']}<br>";
-        //         echo "Location: {$current_period['info']['location']}<br>";
-        //         echo "Professor: {$current_period['info']['professor']}</p>";
-        //     }
-        // }
 
-        // $next_period = $calendar->getNextPeriod(8);
-        // if ($next_period) {
-        //     echo "<h3>Next Period: P{$next_period['period']}</h3>";
-        //     if ($next_period['info']) {
-        //         echo "<p>Title: {$next_period['info']['title']}<br>";
-        //         echo "Location: {$next_period['info']['location']}<br>";
-        //         echo "Professor: {$next_period['info']['professor']}</p>";
-        //     }
-        // }
-        // ?>
-    <!-- </div> -->
+    <?php 
+    
+    
+    ?>
 
     </div>
 

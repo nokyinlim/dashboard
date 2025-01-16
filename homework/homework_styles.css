@@ -1,0 +1,137 @@
+/* homework_styles.css */
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+
+.task-form {
+    background-color: white;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+}
+
+.task-form h2 {
+    text-align: center;
+}
+
+.task-form input[type="text"],
+.task-form input[type="password"],
+.task-form input[type="url"],
+.task-form input[type="date"] {
+    width: 100%;
+    padding: 12px; /* Increase padding for comfort */
+    margin: 10px 0; /* Space between input fields */
+    border: 1px solid #aaa; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #ddd; /* Dark background for input */
+    color: #222; /* Text color */
+    font-size: 16px; /* Font size */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.task-form .suggestion-body {
+    margin-bottom: 5px;
+}
+.task-form button .suggestion {
+    width: 40%;
+}
+
+.task-form input[type="text"],
+.task-form input[type="password"],
+.task-form input[type="url"],
+.task-form input[type="date"] {
+    width: 100%;
+    padding: 12px; /* Increase padding for comfort */
+    margin: 10px 0; /* Space between input fields */
+    border: 1px solid #aaa; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #ddd; /* Dark background for input */
+    color: #222; /* Text color */
+    font-size: 16px; /* Font size */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+.task-form input[type="password"]:focus {
+    border-color: #3498db; /* Highlight border color on focus */
+    outline: none; /* Remove default outline */
+    background-color: #333; /* Slightly lighter background on focus */
+}
+
+.task-form input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100px;
+}
+
+.task-form input[type="submit"]:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+.task-form input[type="submit"]:active {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.task-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.task-form h3 {
+    margin-bottom: 20px;
+    color: #fff
+}

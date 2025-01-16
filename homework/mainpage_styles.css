@@ -1,0 +1,52 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.task-table th, .task-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+.task-table th {
+    background-color: #007bff;
+    color: white;
+}
+.task-row {
+    transition: all 0.3s ease;
+}
+.task-row.expanded {
+    background-color: #e7f1ff;
+}
+.full-description {
+    display: none;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+.task-actions button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.task-actions button:hover {
+    background-color: #0056b3;
+}
+.hidden {
+    display: none;
+}
