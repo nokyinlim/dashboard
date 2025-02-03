@@ -12,4 +12,6 @@ $db->exec('CREATE TABLE homework_items (
     FOREIGN KEY (user_id) REFERENCES users (id)
 );');
 
+error_log('[Server] Table "homework_items" created successfully');
+
 ?>

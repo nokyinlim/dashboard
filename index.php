@@ -6,6 +6,8 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
     exit;
 }
 
+// Include helper files for calendar for display on the dashboard
+
 include 'calendar/config.php';
 include 'calendar/database.php';
 include 'calendar/calendar.php';

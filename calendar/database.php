@@ -23,6 +23,8 @@ class Database {
                 class TEXT
             )
         ');
+        error_log("[Server] Could not find table 'periods'");
+        error_log("[Server] Table 'periods' created successfully");
     }
 
     public function savePeriod($day, $week, $period, $title, $location, $professor, $class, $do_not_duplicate = true) {

@@ -10,10 +10,7 @@ $db->exec("CREATE TABLE IF NOT EXISTS users (
 
 $db->exec("INSERT OR IGNORE INTO users (username, password) VALUES ('user', 'password')");
 
+error_log('[Server] Table "users" created successfully');
 
-// others:
-
-// user: 'louistest', password: 'password'
-// user: 'nlim', password: 'P*********##'
 ?>
 
