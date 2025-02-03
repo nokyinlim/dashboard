@@ -247,6 +247,8 @@ body.dark-mode .current-info {
     background-color: #4a4a00;
 }
 
+
+
     </style>
     <script href="../script.js"></script>
 </head>
@@ -265,7 +267,9 @@ body.dark-mode .current-info {
 
     <?php
     // Display table
+
     echo $calendar->generateTableView($_GET['week'] ?? null);
+
     ?>
 
     <div class="period-form">
@@ -330,6 +334,7 @@ body.dark-mode .current-info {
             toggleButton.textContent = 'Switch to Light Mode';
         }
 
+        
         toggleButton.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             const isDarkMode = document.body.classList.contains('dark-mode');

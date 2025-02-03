@@ -11,6 +11,8 @@ class Database {
     }
 
     private function createTables() {
+
+        
         $this->db->exec('
             CREATE TABLE IF NOT EXISTS periods (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -87,7 +89,10 @@ class Database {
         $stmt->bindValue(':username', $_SESSION['username'], SQLITE3_TEXT);
         
         $result = $stmt->execute();
-        return $result->fetchArray(SQLITE3_ASSOC);
+
+        if ($result) {
+            return $result->fetchArray(SQLITE3_ASSOC);
+        }
     }
 }
 ?>

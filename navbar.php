@@ -3,7 +3,13 @@
 
 $type = $_GET['type'] ?? '';
 
-// echo "<script>console.log('Went into the Else statement somehow.');</script>";
+// This file generates the navbar which should be used by all pages
+// Other files using their own navbar should be changed soon
+// The navbar may be generated based on the type of page it is on
+// The type of page is determined by the type GET parameter
+// The type of page can be one of the following:
+    // home: the default navbar for non-logged in users
+        // features: the features page; a submenu when selecting 'Features' section within home
 
 function generateLinks($links) {
     foreach ($links as $link) {
